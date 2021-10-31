@@ -16,6 +16,15 @@ public class TestElevator {
     }
 
     @Test
+    @DisplayName("Проверяем toSting() метод")
+    public void Checking_To_String() {
+
+        assertEquals("Количество этажей: " + elevator.getNumberOfFloors().length +
+                "\nЦокольных этажей: " + elevator.getGroundFloors().length +
+                "\nТекущий этаж: " + elevator.getCurrentFloor() + "", elevator.toString());
+    }
+
+    @Test
     @DisplayName("Проверяем как поднимается лифт с 1 этажа на 4")
     public void Checking_Going_Up_To_4() {
         elevator.changeFloor(4);

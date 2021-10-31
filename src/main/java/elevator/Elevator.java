@@ -18,7 +18,6 @@ public class Elevator {
         this.currentFloor = currentFloor;
     }
 
-
     public void changeFloor(final int selectedFloor) {
 
         if (Arrays.stream(numberOfFloors).noneMatch(i -> i == selectedFloor) &&
@@ -35,40 +34,34 @@ public class Elevator {
         if (selectedFloor > currentFloor) {
             for (int i = currentFloor; i <= selectedFloor; ++i) {
 
-                if (currentFloor == 0) {
-                    ++currentFloor;
-                } else {
-                    ++currentFloor;
-                }
+                ++currentFloor;
 
                 if (currentFloor == selectedFloor) {
                     System.out.println("Приехал на этаж: " + currentFloor);
                     return;
                 }
 
-                if (currentFloor != 0) {
-                    System.out.println("Поднялся на этаж: " + currentFloor);
+                if (currentFloor == 0) {
+                    ++currentFloor;
                 }
+                System.out.println("Спустился на этаж: " + currentFloor);
 
             }
 
         } else {
             for (int i = currentFloor; i >= selectedFloor; --i) {
 
-                if (currentFloor == 0) {
-                    --currentFloor;
-                } else {
-                    --currentFloor;
-                }
+                --currentFloor;
 
                 if (currentFloor == selectedFloor) {
                     System.out.println("Приехал на этаж: " + currentFloor);
                     return;
                 }
 
-                if (currentFloor != 0) {
-                    System.out.println("Спустился на этаж: " + currentFloor);
+                if (currentFloor == 0) {
+                    --currentFloor;
                 }
+                System.out.println("Спустился на этаж: " + currentFloor);
 
             }
         }
