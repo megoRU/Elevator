@@ -32,9 +32,9 @@ public class Elevator {
         }
 
         if (selectedFloor > currentFloor) {
-            for (int i = currentFloor; i <= selectedFloor; ++i) {
+            for (int i = currentFloor; i <= selectedFloor; i++) {
 
-                ++currentFloor;
+                currentFloor++;
 
                 if (currentFloor == selectedFloor) {
                     System.out.println("Приехал на этаж: " + currentFloor);
@@ -42,16 +42,16 @@ public class Elevator {
                 }
 
                 if (currentFloor == 0) {
-                    ++currentFloor;
+                    currentFloor++;
                 }
                 System.out.println("Спустился на этаж: " + currentFloor);
 
             }
 
         } else {
-            for (int i = currentFloor; i >= selectedFloor; --i) {
+            for (int i = currentFloor; i >= selectedFloor; i--) {
 
-                --currentFloor;
+                currentFloor--;
 
                 if (currentFloor == selectedFloor) {
                     System.out.println("Приехал на этаж: " + currentFloor);
@@ -59,7 +59,7 @@ public class Elevator {
                 }
 
                 if (currentFloor == 0) {
-                    --currentFloor;
+                    currentFloor--;
                 }
                 System.out.println("Спустился на этаж: " + currentFloor);
 
@@ -70,9 +70,9 @@ public class Elevator {
     @Override
     public String toString() {
         return
-                "Количество этажей: " + numberOfFloors.length +
-                        "\nЦокольных этажей: " + groundFloors.length +
-                        "\nТекущий этаж: " + currentFloor + "";
+                "Количество этажей: " + getNumberOfFloors().length +
+                        "\nЦокольных этажей: " + getGroundFloors().length +
+                        "\nТекущий этаж: " + getCurrentFloor() + "";
     }
 
 }
