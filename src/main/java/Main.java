@@ -16,7 +16,7 @@ public class Main {
                 String input = in.nextLine();
 
 
-                if (input.matches("[0-9]") || input.matches("-[0-9]")) {
+                if (input.matches("\\d") || input.matches("-\\d")) {
                     elevator.changeFloor(Integer.parseInt(input));
                 } else {
                     System.err.println("Is not number of floor");
