@@ -13,10 +13,8 @@ public class Elevator {
     private int currentFloor;
 
     public Elevator(int[] numberOfFloors, int[] groundFloors, int currentFloor) {
-        if (groundFloors.length == 0)
-            throw new IllegalArgumentException("groundFloors == 0");
-        if (numberOfFloors.length == 0)
-            throw new IllegalArgumentException("numberOfFloors == 0");
+        if (groundFloors.length == 0 || numberOfFloors.length == 0)
+            throw new IllegalArgumentException("groundFloors == 0 or numberOfFloors == 0");
 
         allFloors = new ArrayList<>(groundFloors.length + numberOfFloors.length);
 
